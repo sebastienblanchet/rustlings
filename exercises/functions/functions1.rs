@@ -1,8 +1,11 @@
 // functions1.rs
 // Make me compile! Execute `rustlings hint functions1` for hints :)
 
-// I AM NOT DONE
-
 fn main() {
-    call_me();
+    let x : i32 = 1;
+    call_me(x);
+}
+
+fn call_me(x : i32) {
+    println!("Test {}", x);
 }
