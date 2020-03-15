@@ -5,7 +5,13 @@
 
 // Write a macro that passes the test! No hints this time, you can do it!
 
-// I AM NOT DONE
+// #[macro_use]
+#[macro_export]
+macro_rules! my_macro {
+    ($x:expr) => {
+        format!("Hello {}", $x);
+    };
+}
 
 #[cfg(test)]
 mod tests {
@@ -13,6 +19,7 @@ mod tests {
 
     #[test]
     fn test_my_macro_world() {
+        // NEED TO COMPARE string smartass
         assert_eq!(my_macro!("world!"), "Hello world!");
     }
 

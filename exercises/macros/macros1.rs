@@ -1,7 +1,9 @@
 // macros1.rs
 // Make me compile! Execute `rustlings hint macros1` for hints :)
 
-// I AM NOT DONE
+// macros take a ! 
+// but what exactly is a macro?
+// macros is writting code that writes OTHER code
 
 macro_rules! my_macro {
     () => {
@@ -10,5 +12,5 @@ macro_rules! my_macro {
 }
 
 fn main() {
-    my_macro();
+    my_macro!();
 }
