@@ -16,20 +16,28 @@
 // There are at least two ways to implement this that are both correct-- but
 // one is a lot shorter! Execute `rustlings hint errors2` for hints to both ways.
 
-// I AM NOT DONE
-
 use std::num::ParseIntError;
+
+// Result<T, E>
+// https://doc.rust-lang.org/std/result/
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
     let qty = item_quantity.parse::<i32>();
 
-    Ok(qty * cost_per_item + processing_fee)
+    match qty {
+        // in match you essentailly create vars and pass them int
+        Err(n) => return Err(n),
+        
+        // actually some number
+        Ok(e) =>  return Ok( e * cost_per_item + processing_fee),
+    }
 }
 
 #[cfg(test)]
 mod tests {
+    //imports
     use super::*;
 
     #[test]
