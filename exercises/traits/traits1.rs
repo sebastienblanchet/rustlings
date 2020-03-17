@@ -1,21 +1,30 @@
 // traits1.rs
 // Time to implement some traits!
-// 
+//
 // Your task is to implement the trait
 // `AppendBar' for the type `String'.
-// 
+//
 // The trait AppendBar has only one function,
 // which appends "Bar" to any object
 // implementing this trait.
 
-// I AM NOT DONE
+//to have default behavior for some or all of the methods in a trait
+// instead of requiring implementations for all methods on every type.
+
+
+// Note: Traits are similar to a feature often called interfaces in other languages, 
+// although with some differences.
+
 trait AppendBar {
+    // assume this is similar to an overide?
     fn append_bar(self) -> Self;
 }
 
 impl AppendBar for String {
     //Add your code here
-
+    fn append_bar(self) -> Self {
+        format!("{}Bar", self)
+    }
 }
 
 fn main() {
